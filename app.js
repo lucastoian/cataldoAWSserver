@@ -110,7 +110,7 @@ app.use(`${api}/w-variants`, W_variantsRoutes)
 app.use(`${api}/brands`, brandsRoutes);
 app.use(`${api}/sms`, smsRoutes);
 app.use(`${api}`, stripeRoutes);
-
+/*
 app.get('/*', (req, res) => {
   res.sendFile(process.cwd()+"/dist/apps/cataldo-store/index.html");
 });
@@ -120,7 +120,7 @@ app.get('/*', (req, res) => {
     res.sendFile(process.cwd()+"/dist/apps/admin/index.html");
   });  
 
-
+*/
 //Database connection
 mongoose.connect(process.env.CONNECTION_STRING).then(() => {
     console.log('Database connection ready...');
@@ -129,7 +129,7 @@ mongoose.connect(process.env.CONNECTION_STRING).then(() => {
 })
 
 //Server
-app.listen(process.env.PORT || 8080, () => {
+app.listen(8080, () => {
     console.log('server is running on http://localhost:8080');
 
 })
