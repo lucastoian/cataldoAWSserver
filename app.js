@@ -71,7 +71,7 @@ const stripeRoutes = require('./routes/stripe');
 const smsRoutes = require('./routes/sms');
 
 
-const api = process.env.API_URL;
+const api = '/api/v1';
 
 app.use(`${api}/categories`, categoriesRoutes);
 app.use(`${api}/products`, productsRoutes);
@@ -80,7 +80,7 @@ app.use(`${api}/users`, usersRoutes);
 app.use(`${api}/orders`, ordersRoutes);
 app.use(`${api}/variants`, variantsRoutes);
 app.use(`${api}/w-variants`, W_variantsRoutes)
-app.use(`${api}/brands`, brandsRoutes);
+app.use(`/api/v1/brands`, brandsRoutes);
 app.use(`${api}/sms`, smsRoutes);
 app.use(`${api}`, stripeRoutes);
 /*
