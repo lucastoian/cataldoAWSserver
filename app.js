@@ -31,21 +31,10 @@ const history = require('connect-history-api-fallback');
 //Cors
 
 
-app.use(rendertron.makeMiddleware({
-  proxyUrl: 'https://cataldostore.appspot.com/render',
-  userAgentPattern: BOT_UA_PATTERN
-}));
-
 app.use(cors());
 app.enable('trust proxy')
 //app.use(require('prerender-node').set('prerenderToken', 'p4TrE3U839HAbkLsZeCz'));
-app.use((req, res, next) => {
-    if (req.protocol === 'http') {
-        return res.redirect(301, `https://${req.headers.host}${req.url}`);
-    }
 
-    next();
-});
 
 const shouldCompress = (req, res) => {
   if (req.headers['x-no-compression']) {
@@ -110,12 +99,12 @@ app.use(`${api}/w-variants`, W_variantsRoutes)
 app.use(`${api}/brands`, brandsRoutes);
 app.use(`${api}/sms`, smsRoutes);
 app.use(`${api}`, stripeRoutes);
-/*
+
 app.get('/*', (req, res) => {
-  res.sendFile(process.cwd()+"/dist/apps/cataldo-store/index.html");
+  console.log('acces detected');
 });
 
-
+/*
   app.get('/admin', (req,res) => {
     res.sendFile(process.cwd()+"/dist/apps/admin/index.html");
   });  
