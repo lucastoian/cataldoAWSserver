@@ -100,14 +100,14 @@ app.use(`${api}/w-variants`, W_variantsRoutes)
 app.use(`${api}/brands`, brandsRoutes);
 app.use(`${api}/sms`, smsRoutes);
 app.use(`${api}`, stripeRoutes);
-
+/*
 app.get('/*', (req, res) => {
   console.log('acces detected');
       var networkInterfaces = os.networkInterfaces();
   console.log(networkInterfaces);
 });
 
-/*
+
   app.get('/admin', (req,res) => {
     res.sendFile(process.cwd()+"/dist/apps/admin/index.html");
   });  
