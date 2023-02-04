@@ -12,12 +12,12 @@ require('dotenv/config');
 
 //errorHandler
 //const errorHandler = require('./helpers/error-handler');
-const history = require('connect-history-api-fallback');
+//const history = require('connect-history-api-fallback');
 //Cors
 
 
-app.use(cors());
-app.enable('trust proxy')
+//app.use(cors());
+//app.enable('trust proxy')
 //app.use(require('prerender-node').set('prerenderToken', 'p4TrE3U839HAbkLsZeCz'));
 
 
@@ -38,7 +38,7 @@ app.use(compression({
   // body size before considering compression, the default is 1 kB
   threshold: 0
 }));
-app.options('*', cors());
+//app.options('*', cors());
 
 
 
@@ -52,10 +52,7 @@ app.use(morgan('tiny'));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 //app.use(express.static(process.cwd()+"/dist/apps/cataldo-store"));
-app.use(history({
-  disableDotRule: true,
-  verbose: true
-}));
+
 //app.use(express.static(process.cwd()+"/dist/apps/admin"));
 
 //Routes
@@ -72,7 +69,7 @@ const smsRoutes = require('./routes/sms');
 
 
 const api = '/api/v1';
-app.use('/brands', brandsRoutes);
+app.use('/api/v1/brands', brandsRoutes);
 app.use(`${api}/categories`, categoriesRoutes);
 app.use(`${api}/products`, productsRoutes);
 app.use(`${api}/women-products`, W_productsRoutes);
@@ -83,19 +80,14 @@ app.use(`${api}/w-variants`, W_variantsRoutes)
 
 app.use(`${api}/sms`, smsRoutes);
 app.use(`${api}`, stripeRoutes);
-/*
-app.get('/*', (req, res) => {
-  console.log('acces detected');
-      var networkInterfaces = os.networkInterfaces();
-  console.log(networkInterfaces);
-});
+
 
 
   app.get('/admin', (req,res) => {
-    res.sendFile(process.cwd()+"/dist/apps/admin/index.html");
+    res.send(200);
   });  
 
-*/
+
 //Database connection
 mongoose.connect(process.env.CONNECTION_STRING).then(() => {
     console.log('Database connection ready...');

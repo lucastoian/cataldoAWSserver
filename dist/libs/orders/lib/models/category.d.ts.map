@@ -1,1 +1,0 @@
-{"version":3,"file":"category.d.ts","sourceRoot":"","sources":["../../../../../libs/orders/src/lib/models/category.ts"],"names":[],"mappings":"AAAA,qBAAa,QAAQ;IACnB,EAAE,CAAC,EAAE,MAAM,CAAC;IACZ,IAAI,CAAC,EAAE,MAAM,CAAC;IACd,IAAI,CAAC,EAAE,MAAM,CAAC;IACd,KAAK,CAAC,EAAE,MAAM,CAAC;IACf,OAAO,CAAC,EAAE,OAAO,CAAC;IAClB,CAAC,CAAC,EAAE,OAAO,CAAC;IACZ,CAAC,CAAC,EAAE,OAAO,CAAC;CACb"}

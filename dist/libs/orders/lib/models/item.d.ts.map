@@ -1,1 +1,0 @@
-{"version":3,"file":"item.d.ts","sourceRoot":"","sources":["../../../../../libs/orders/src/lib/models/item.ts"],"names":[],"mappings":"AAAA,qBAAa,IAAI;IACf,EAAE,EAAE,MAAM,CAAC;IACX,IAAI,EAAE,MAAM,CAAC;IACb,QAAQ,EAAE,MAAM,CAAC;IACjB,OAAO,EAAE,MAAM,CAAC;IAChB,aAAa,EAAE,MAAM,CAAC;IACtB,gBAAgB,EAAE,MAAM,CAAC;IACzB,SAAS,EAAE,MAAM,CAAC;IAClB,QAAQ,EAAE,MAAM,CAAC;CAClB"}

@@ -1,1 +1,0 @@
-{"version":3,"file":"order-item.d.ts","sourceRoot":"","sources":["../../../../../libs/orders/src/lib/models/order-item.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,WAAW,CAAC;AAGpC,qBAAa,SAAS;IAClB,OAAO,CAAC,EAAE,MAAM,CAAC;IACjB,QAAQ,CAAC,EAAE,MAAM,CAAC;IAClB,OAAO,CAAC,EAAE,OAAO,CAAC;CACrB"}
