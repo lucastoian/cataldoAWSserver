@@ -44,7 +44,6 @@ app.options('*', cors());
 
 
 //Middleware
-app.use(express.json());
 app.use(morgan('tiny'));
 //app.use(authJwt());
 //app.use('/public/uploads', express.static(__dirname + '/public/uploads'));
@@ -52,7 +51,7 @@ app.use(morgan('tiny'));
 //app.use(errorHandler);
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(express.static(process.cwd()+"/dist/apps/cataldo-store"));
+//app.use(express.static(process.cwd()+"/dist/apps/cataldo-store"));
 app.use(history({
   disableDotRule: true,
   verbose: true
@@ -107,7 +106,6 @@ mongoose.connect(process.env.CONNECTION_STRING).then(() => {
 //Server
 app.listen(3000, () => {
     console.log('server is running on port 3000');
-    var networkInterfaces = os.networkInterfaces();
-  console.log(networkInterfaces);
+
 
 })
