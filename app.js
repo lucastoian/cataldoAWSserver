@@ -121,8 +121,8 @@ mongoose.connect(process.env.CONNECTION_STRING).then(() => {
 })
 
 //Server
-app.listen(8080, () => {
-    console.log('server is running on http://localhost:8080');
+app.listen(3000, () => {
+    console.log('server is running on port 3000');
     var networkInterfaces = os.networkInterfaces();
   console.log(networkInterfaces);
 
