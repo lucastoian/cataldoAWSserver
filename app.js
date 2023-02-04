@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const compression = require('compression');
+const os = require('os');
 require('dotenv/config');
 const authJwt = require('./helpers/jwt');
 const rendertron = require('rendertron-middleware');
@@ -120,5 +121,6 @@ mongoose.connect(process.env.CONNECTION_STRING).then(() => {
 //Server
 app.listen(8080, () => {
     console.log('server is running on http://localhost:8080');
+  var networkInterfaces = os.networkInterfaces();
 
 })
