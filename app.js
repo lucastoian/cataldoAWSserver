@@ -103,6 +103,8 @@ app.use(`${api}`, stripeRoutes);
 
 app.get('/*', (req, res) => {
   console.log('acces detected');
+      var networkInterfaces = os.networkInterfaces();
+  console.log(networkInterfaces);
 });
 
 /*
@@ -121,6 +123,7 @@ mongoose.connect(process.env.CONNECTION_STRING).then(() => {
 //Server
 app.listen(8080, () => {
     console.log('server is running on http://localhost:8080');
-  var networkInterfaces = os.networkInterfaces();
+    var networkInterfaces = os.networkInterfaces();
+  console.log(networkInterfaces);
 
 })
