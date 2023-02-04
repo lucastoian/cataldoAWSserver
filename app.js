@@ -7,8 +7,8 @@ const cors = require('cors');
 const compression = require('compression');
 const os = require('os');
 require('dotenv/config');
-const authJwt = require('./helpers/jwt');
-const rendertron = require('rendertron-middleware');
+//const authJwt = require('./helpers/jwt');
+//const rendertron = require('rendertron-middleware');
 const BOTS = rendertron.botUserAgents.concat(['googlebot','yolobot','Chrome-Lighthouse',  'Baiduspider',
 'bingbot',
 'Embedly',
@@ -27,7 +27,7 @@ const BOTS = rendertron.botUserAgents.concat(['googlebot','yolobot','Chrome-Ligh
 'WhatsApp']);
 const BOT_UA_PATTERN = new RegExp(BOTS.join('|'), 'i');
 //errorHandler
-const errorHandler = require('./helpers/error-handler');
+//const errorHandler = require('./helpers/error-handler');
 const history = require('connect-history-api-fallback');
 //Cors
 
@@ -62,10 +62,10 @@ app.options('*', cors());
 //Middleware
 app.use(express.json());
 app.use(morgan('tiny'));
-app.use(authJwt());
-app.use('/public/uploads', express.static(__dirname + '/public/uploads'));
-app.use('/public', express.static(__dirname + '/public'));
-app.use(errorHandler);
+//app.use(authJwt());
+//app.use('/public/uploads', express.static(__dirname + '/public/uploads'));
+//app.use('/public', express.static(__dirname + '/public'));
+//app.use(errorHandler);
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(process.cwd()+"/dist/apps/cataldo-store"));
