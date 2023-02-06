@@ -16,8 +16,8 @@ require('dotenv/config');
 //Cors
 
 
-//app.use(cors());
-//app.enable('trust proxy')
+app.use(cors());
+app.enable('trust proxy')
 //app.use(require('prerender-node').set('prerenderToken', 'p4TrE3U839HAbkLsZeCz'));
 
 
