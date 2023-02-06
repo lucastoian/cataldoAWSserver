@@ -106,8 +106,8 @@ let paypalOrder;
                                                     "payment_method": "paypal"
                                                 },
                                                 "redirect_urls": {
-                                                    "return_url": "https://www.cataldostore.it/api/v1/success?amount=" + req.body.amount + "&order=" + encodeURIComponent(JSON.stringify(req.body.order)),
-                                                    "cancel_url": "https://www.cataldostore.it/api/v1/cancel"
+                                                    "return_url": "https://funloltracker.herokuapp.com/api/v1/success?amount=" + req.body.amount + "&order=" + encodeURIComponent(JSON.stringify(req.body.order)),
+                                                    "cancel_url": "https://funloltracker.herokuapp.com/api/v1/cancel"
                                                 },
                                                 "transactions": [{
                                                     "item_list": {
@@ -183,11 +183,11 @@ let paypalOrder;
                     
                     body: JSON.stringify(payload)  
                 };
-                fetch('https://www.cataldostore.it/api/v1/orders/createNewOrder', options )
+                fetch('https://funloltracker.herokuapp.com/api/v1/orders/createNewOrder', options )
                     .then( response => response.json() )
                     .then( response => {
                        console.log("HO CREATO QUESTO ORDINE CON PAYPAL: ################################################################################ÀÀ " + JSON.stringify(response))
-                       res.redirect("https://www.cataldostore.it/#/orders/" + response._id)
+                       res.redirect("https://www.cataldostore.it/orders/" + response._id)
                     } );
             }
         });
