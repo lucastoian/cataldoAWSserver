@@ -98,7 +98,7 @@ mongoose.connect(process.env.CONNECTION_STRING).then(() => {
 }).catch((err) => {
     console.log(err);
 })
-
+console.log( app.address().address );
 let port = process.env.PORT || 3000
 //Server
 app.listen(port, () => {
