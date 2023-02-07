@@ -85,7 +85,10 @@ app.use(`${api}/w-variants`, W_variantsRoutes)
 app.use(`${api}/sms`, smsRoutes);
 app.use(`${api}`, stripeRoutes);
 
-
+ app.get('/*', (req,res) => {
+    var origin = req.get('origin');
+   console.log(origin)
+  });  
 
   app.get('/admin', (req,res) => {
     res.send(200);
