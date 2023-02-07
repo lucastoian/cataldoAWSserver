@@ -84,6 +84,9 @@ let s3 = new S3Client({
 
 
 router.get(`/`, async(req,res)=>{
+       var origin = req.get('origin');
+   console.log("ORIGIN: " + origin)
+    
     try{
     const brandsList = await Brand.find()
 
@@ -102,6 +105,8 @@ router.get(`/`, async(req,res)=>{
 })
 
 router.get(`/:id`, async(req,res)=>{
+           var origin = req.get('origin');
+   console.log("ORIGIN: " + origin)
     try{
     const brand = await Brand.findById(req.params.id);
 
@@ -120,6 +125,8 @@ router.get(`/:id`, async(req,res)=>{
 })
 
 router.get(`/get/:name`, async(req,res)=>{
+           var origin = req.get('origin');
+   console.log("ORIGIN: " + origin)
     try{
     let name = req.params.name;
     const brand = await Brand.find({name: name});
@@ -139,6 +146,8 @@ router.get(`/get/:name`, async(req,res)=>{
 })
 
 router.get(`/get/products/:name`, async(req,res)=>{
+           var origin = req.get('origin');
+   console.log("ORIGIN: " + origin)
     try{
     let name = req.params.name;
     const brand = await Brand.find({name: name});
