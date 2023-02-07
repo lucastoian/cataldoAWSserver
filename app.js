@@ -14,7 +14,11 @@ require('dotenv/config');
 //const errorHandler = require('./helpers/error-handler');
 //const history = require('connect-history-api-fallback');
 //Cors
+var os = require('os');
 
+var networkInterfaces = os.networkInterfaces();
+
+console.log(networkInterfaces);
 
 app.use(cors());
 app.enable('trust proxy')
