@@ -20,7 +20,8 @@ var networkInterfaces = os.networkInterfaces();
 
 console.log(networkInterfaces);
 
-app.use(cors({origin:'https://www.cataldostore.it'}));
+app.use(cors())
+//app.use(cors({origin:'https://www.cataldostore.it'}));
 //app.enable('trust proxy')
 //app.use(require('prerender-node').set('prerenderToken', 'p4TrE3U839HAbkLsZeCz'));
 
