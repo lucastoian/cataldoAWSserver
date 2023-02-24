@@ -498,7 +498,7 @@ router.get(`/prodname/:name`, async (req,res)=>{
 // Get specific product by ID
 router.get(`/:id`, async (req,res)=>{
     try{
-    const product = await Product.findById(req.params.id).populate('category');
+    const product = await Product.find({"productId": req.params.id}).populate('category');
 
 
     res.send(product);
