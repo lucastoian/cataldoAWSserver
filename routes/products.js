@@ -547,7 +547,7 @@ router.get(`/get/featured/:brand`, async (req,res)=>{
 
     try{
 
-        const products= await Product.find({"brand": map.get(req.params.brand), "isFeatured":true, "sex":req.query.sex}).limit(150);
+        const products= await Product.find({"brand": map.get(req.params.brand), "isFeatured":true, "sex":req.query.sex});
         //console.log("featured products : " + products)
     
         if(!products){
@@ -569,7 +569,7 @@ router.get(`/get/featured/:brand`, async (req,res)=>{
     
         console.log(distinctProducts)
         if(distinctProducts.length <5){
-            const moreProducts= await Product.find({"isFeatured":true, "sex":req.query.sex}).limit(50);
+            const moreProducts= await Product.find({"isFeatured":true, "sex":req.query.sex});
             for(let i = 0; i<moreProducts.length-1; i++){
                 let p1 = moreProducts.pop() ;
                 let p2= moreProducts.pop() ;
